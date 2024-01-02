@@ -1,5 +1,7 @@
 {
+    "homepage": "https://Accelerator321.github.io/video-call-client",
   "name": "video_call",
+
   "private": true,
   "version": "0.0.0",
   "type": "module",
