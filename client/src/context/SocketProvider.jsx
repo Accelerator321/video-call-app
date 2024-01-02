@@ -9,7 +9,7 @@ export const useSocket= ()=>{
 const SocketProvider = (props) => {
     
     
-    const socket = useMemo(()=>io('http://192.168.153.92'),[] );
+    const socket = useMemo(()=>io('https://video-call-backend-meke.onrender.com'),[] );
 
 
 
