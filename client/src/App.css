@@ -21,6 +21,11 @@ body::before{
   /* z-index: 1; */
 }
 
+.wrapper{
+  height:15em;
+  width:auto;
+  border: 2px solid black;
+}
 #call-container{
   display: flex;
   flex-direction: row;
@@ -29,10 +34,11 @@ body::before{
   z-index: 10;
 }
 .stream-text{
-  font-size: 2.3rem;
+  font-size: 1.4rem;
   margin-bottom: 0px;
+
   position: relative;
-  top:3rem;
+  
 }
 
 .stream-box{

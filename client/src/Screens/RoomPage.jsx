@@ -188,8 +188,8 @@ export const RoomPage = () => {
       </h1>
 
       <div id="call-container">
-        <div className="stream-box">
-          {myStream && <h4 className="stream-text">My stream</h4>}
+      
+          {/* {myStream && <h4 className="stream-text">My stream</h4>}
           {myStream && (
             <ReactPlayer
               url={myStream}
@@ -198,13 +198,14 @@ export const RoomPage = () => {
               playing
               muted
             />
-          )}
+          )} */}
+          <Player stream={myStream} email={"My stream"} />
 
           {Object.keys(peerList).map((id) => {
             i += 1;
-            return <Player key={i} stream={streamList[id]} />;
+            return <Player key={i} stream={streamList[id]} email={id} />;
           })}
-        </div>
+        
       </div>
     </>
   );

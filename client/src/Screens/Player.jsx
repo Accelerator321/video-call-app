@@ -1,22 +1,23 @@
 import React from 'react'
 import ReactPlayer from "react-player";
 
-const Player = ({stream}) => {
-    console.log("player", stream);
+const Player = ({stream,email}) => {
+    console.log("player",email, stream);
   return (
     <div className="stream-box" >
         
-          {stream && <h4 className="stream-text">Remote stream </h4>}
-
+          {stream && <h4 className="stream-text">{email}</h4>}
+          <div className='wrapper'>
           {stream&& (
             <ReactPlayer
               url={stream}
-              height="300px"
-              width="300px"
+              height="100%"
+              width="100%"
               playing
               muted
             />
           )}
+          </div>
     </div>
   )
 }
