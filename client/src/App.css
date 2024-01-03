@@ -25,6 +25,8 @@ body{
   height:15em;
   width:auto;
   border: 2px solid black;
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
 }
 #call-container{
   display: flex;

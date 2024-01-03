@@ -9,8 +9,8 @@ export const useSocket= ()=>{
 const SocketProvider = (props) => {
     
     
-    // const socket = useMemo(()=>io('https://video-call-backend-meke.onrender.com'),[] );
-    const socket = useMemo(()=>io('localhost'),[] );
+    const socket = useMemo(()=>io('https://video-call-backend-meke.onrender.com'),[] );
+    // const socket = useMemo(()=>io('localhost'),[] );
 
 
 
