@@ -4,6 +4,7 @@ const io = new Server(80,{
     cors:true
 });
 const socketToemail = new Map();
+const socketToRoom= new Map();
 const emailTosocket = new Map();
 
 io.on('connection', (socket)=>{
@@ -14,6 +15,12 @@ io.on('connection', (socket)=>{
     socket.on('call:accepted', data=>callAccepted(data,socket));
     socket.on("peer:nego:needed", data=>handleNegotiation(data,socket));
     socket.on("peer:nego:done", data=> NegotiationDone(data,socket));
+    socket.on("send:stream", data=>streamHandler(data,socket));
+    socket.on("disconnect",(d)=>{
+
+        io.to(socketToRoom.get(socket.id)).emit("user:left",
+        {email: socketToemail.get(socket.id)});
+    })
 })
 
 
@@ -26,9 +33,14 @@ const roomJoin = (data,socket)=>{
   
     io.to(roomId).emit("user:joined",{email,id:socket.id});
     socket.join(roomId);
+    socketToRoom.set(socket.id, roomId);
 
     io.to(emailTosocket.get(email)).emit("room:join",data);
 
+}
+const streamHandler = (data,socket)=>{
+    let {to} = data;
+    io.to(emailTosocket.get(to)).emit("send:stream");
 }
 
 const userCall = (data,socket)=>{

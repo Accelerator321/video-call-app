@@ -2,7 +2,7 @@ import { useState } from 'react'
 import {Routes,Route} from 'react-router-dom';
 
 import Lobby from './Screens/Lobby'
-import { RoomPage } from './Screens/RoomPage';
+import  RoomPage  from './Screens/RoomPage';
 import './App.css';
 
 function App() {

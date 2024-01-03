@@ -3,6 +3,7 @@ import ReactPlayer from "react-player";
 
 const Player = ({stream,email}) => {
     console.log("player",email, stream);
+    if(!email) return (<></>);
   return (
     <div className="stream-box" >
         
